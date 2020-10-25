@@ -1,19 +1,32 @@
 import React from "react";
+import {AffairType} from "./HW2";
+import classes from './Affairs.module.css';
 
 type AffairPropsType = {
-    // key не нужно типизировать
-    affair: any // need to fix any
-    deleteAffairCallback: any // need to fix any
+    color: string
+    affair: AffairType
+    deleteAffairCallback: (_id: number) => void
 }
 
+
 function Affair(props: AffairPropsType) {
-    const deleteCallback = () => {};// need to fix
+    const deleteCallback = () => {
+        props.deleteAffairCallback(props.affair._id)
+    };
+
+    const indicatorStyle = {
+        backgroundColor: props.affair.priority ? props.color : 'white'
+    };
+
 
     return (
-        <div>
-            // show some text
+        <div className={classes.wrapper}>
 
-            <button onClick={deleteCallback}>X</button>
+            <div style={indicatorStyle} className={classes.affair}>{props.affair.name}{}
+                <button onClick={deleteCallback}>X</button>
+            </div>
+
+
         </div>
     );
 }

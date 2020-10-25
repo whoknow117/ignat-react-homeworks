@@ -14,14 +14,13 @@ function Message(props: PropsType) {
             <div className={classes.message}>
 
                 <div className={classes.avatar}>
-                    <img src={props.avatar} alt=""/>
+                    <img src={props.avatar} alt="#"/>
                 </div>
                 <div className={classes.content}>
                     <h4 className={classes.name}>{props.name}</h4>
                     <p className={classes.text}>{props.message}</p>
                     <span className={classes.time}>{props.time}</span>
                 </div>
-
 
             </div>
         </div>
