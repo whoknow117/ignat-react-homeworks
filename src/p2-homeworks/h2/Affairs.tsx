@@ -13,7 +13,7 @@ function Affairs(props: AffairsPropsType) {
         <Affair // should work
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
             affair={a}
-            color={a.color}
+
             deleteAffairCallback={props.deleteAffairCallback}
         />
     ))

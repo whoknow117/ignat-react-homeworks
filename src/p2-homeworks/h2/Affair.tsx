@@ -3,7 +3,7 @@ import {AffairType} from "./HW2";
 import classes from './Affairs.module.css';
 
 type AffairPropsType = {
-    color: string
+
     affair: AffairType
     deleteAffairCallback: (_id: number) => void
 }
@@ -15,7 +15,7 @@ function Affair(props: AffairPropsType) {
     };
 
     const indicatorStyle = {
-        backgroundColor: props.affair.priority ? props.color : 'white'
+        backgroundColor: props.affair.priority ? props.affair.color : 'white'
     };
 
 
