@@ -17,17 +17,21 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [error, setError] = useState<string>("");
 
     const setNameCallback = (name: string) => {
-        setName(name); // need to fix
+        setName(name);
     };
     const addUser = (name: string) => {
-        if(name.trim() !== "") {
+        if (name.trim() !== "") {
             addUserCallback(name)
-            alert(`Hello  + ${name}!`);
+            alert(`Hello  ${name}!`);
+            setError("");
+        }
+        if (name.trim() === "") {
+            setError("Error")
         }
         setName('')
     };
 
-    const totalUsers = 0 + users.length; // need to fix
+    const totalUsers = 0 + users.length;
     console.log(totalUsers)
     return (
         <Greeting

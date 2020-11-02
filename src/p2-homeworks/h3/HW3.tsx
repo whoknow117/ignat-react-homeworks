@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import GreetingContainer from "./GreetingContainer";
 import {v1} from "uuid";
-
+import classes from './HW3.module.scss';
 
 export type UserType = {
     _id: string
@@ -27,17 +27,17 @@ function HW3() {
     }
 
     return (
-        <div>
-            <hr/>
-            homeworks 3
+        <div className={classes.hw3Wrapper}>
+
+
 
 
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
 
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
+
+
             {/*<AlternativeGreeting/>*/}
-            <hr/>
+
         </div>
     );
 }

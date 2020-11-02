@@ -1,26 +1,42 @@
 import React from "react";
-import s from "./Greeting.module.css";
+import classes from "./Greeting.module.scss";
 
 type GreetingPropsType = {
-    name: string // need to fix any
-    setNameCallback: (name: string) => void // need to fix any
-    addUser: (name: string) => void // need to fix any
-    error: string // need to fix any
-    totalUsers: number // need to fix any
+    name: string
+    setNameCallback: (name: string) => void
+    addUser: (name: string) => void
+    error: string
+    totalUsers: number
 }
 
-// презентационная компонента (для верстальщика)
+
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
+    {name, setNameCallback, addUser, error, totalUsers}
 ) => {
-    const inputClass = s.error; // need to fix with (?:)
+
+
+    const inputStyle = {
+
+        border: error === "" ? '1px solid silver' : '1px solid red'
+    }
+    const errorStyle = {
+
+        opacity: error === "" ? "0" : "1",
+        transition: 'all .3s'
+
+
+
+    }
 
     return (
-        <div>
-            <input value={name} onChange={(e => setNameCallback(e.currentTarget.value))} className={inputClass}/>
-            <span>{error}</span>
-            <button onClick={()=> {addUser(name)}}>add</button>
-            <span>{totalUsers}</span>
+        <div className={classes.wrapper}>
+             <div>
+                 <input value={name} onChange={(e => setNameCallback(e.currentTarget.value))}  style={inputStyle} />
+
+                 <button className={classes.btn} onClick={()=> {addUser(name)}}>add</button>
+             </div>
+            <span className={classes.totalUsers}>{totalUsers}</span>
+            <span  style={errorStyle} className={classes.error}> {error}</span>
         </div>
     );
 }

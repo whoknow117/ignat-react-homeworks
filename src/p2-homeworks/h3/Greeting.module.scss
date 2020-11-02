@@ -1,0 +1,45 @@
+
+
+.wrapper {
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    input {
+        width: 70%;
+        height: 34px;
+        border: none;
+    }
+    .btn {
+        height:37px;
+
+    }
+    .error {
+        position: absolute;
+        bottom: -10px;
+        width: 100px;
+        height: 100px;
+        left: calc(50% - 50px);
+        bottom: -100px;
+        background: #ff0404;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 34px;
+    }
+    .totalUsers {
+        background: #19ff53;
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 10px auto;
+        display: flex;
+        color: #fff;
+        font-size: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+}
