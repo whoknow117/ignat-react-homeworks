@@ -1,9 +1,9 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import classes from "./Greeting.module.scss";
 
 type GreetingPropsType = {
     name: string
-    setNameCallback: (name: string) => void
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void
     addUser: (name: string) => void
     error: string
     totalUsers: number
@@ -15,28 +15,21 @@ const Greeting: React.FC<GreetingPropsType> = (
 ) => {
 
 
-    const inputStyle = {
+    const inputErrorClass = classes.inputError;
 
-        border: error === "" ? '1px solid silver' : '1px solid red'
-    }
-    const errorStyle = {
-
-        opacity: error === "" ? "0" : "1",
-        transition: 'all .3s'
-
-
-
-    }
 
     return (
         <div className={classes.wrapper}>
-             <div>
-                 <input value={name} onChange={(e => setNameCallback(e.currentTarget.value))}  style={inputStyle} />
+            <div className={classes.taskForm}>
+                <input value={name} onChange={setNameCallback} className={error ? inputErrorClass : ""}/>
 
-                 <button className={classes.btn} onClick={()=> {addUser(name)}}>add</button>
-             </div>
+                <button className={classes.btn} onClick={() => {
+                    addUser(name)
+                }}>add
+                </button>
+            </div>
             <span className={classes.totalUsers}>{totalUsers}</span>
-            <span  style={errorStyle} className={classes.error}> {error}</span>
+            {error && <span className={classes.error}> {error}</span>}
         </div>
     );
 }

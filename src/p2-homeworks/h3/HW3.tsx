@@ -9,9 +9,6 @@ export type UserType = {
 }
 
 
-
-
-
 function HW3() {
 
 
@@ -30,10 +27,7 @@ function HW3() {
         <div className={classes.hw3Wrapper}>
 
 
-
-
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
-
 
 
             {/*<AlternativeGreeting/>*/}
