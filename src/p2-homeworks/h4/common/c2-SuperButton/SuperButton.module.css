@@ -3,5 +3,12 @@
 }
 
 .red {
-    background: red;
+    background: rgba(0,0,0,.1);
+
+}
+.normal{
+    border: none;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 4px;
 }

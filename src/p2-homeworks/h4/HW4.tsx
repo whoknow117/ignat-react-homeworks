@@ -6,12 +6,14 @@ import SuperCheckbox from "./common/c3-SuperCheckbox/SuperCheckbox";
 
 function HW4() {
     const [text, setText] = useState<string>("");
-    const error = text ? "" : "error";
+    const error = text ? "" : "введите текст";
     const showAlert = () => {
+
         if (error) {
             alert("введите текст...");
         } else {
-            alert(text); // если нет ошибки показать текст
+            alert(text);
+            setText("")// если нет ошибки показать текст
         }
     }
 
@@ -19,7 +21,7 @@ function HW4() {
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked);
 
     return (
-        <div>
+        <div className={s.wrap}>
             <hr/>
             homeworks 4
 
@@ -35,22 +37,23 @@ function HW4() {
 
                 {/*should work (должно работать)*/}
                 <SuperButton
-                    red // пропсу с булевым значением не обязательно указывать true
+                    red={text}// пропсу с булевым значением не обязательно указывать true
                     onClick={showAlert}
                 >
-                    delete {/*// название кнопки попадёт в children*/}
+                    add {/*// название кнопки попадёт в children*/}
                 </SuperButton>
 
                 {/*should work (должно работать)*/}
                 <SuperCheckbox
                     checked={checked}
                     onChangeChecked={setChecked}
+                    onChange={testOnChange}
                 >
-                    some text {/*// этот текст попадёт в children*/}
+                    childrenText {/*// этот текст попадёт в children*/}
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
+                {/*<SuperCheckbox checked={checked} onChange={testOnChange}/>*/}
             </div>
 
             <hr/>

@@ -1,5 +1,8 @@
 import React, {ChangeEvent} from "react";
 import classes from "./Greeting.module.scss";
+import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
+import SuperEditableSpan from "../h6/common/c4-SuperEditableSpan/SuperEditableSpan";
 
 type GreetingPropsType = {
     name: string
@@ -16,20 +19,36 @@ const Greeting: React.FC<GreetingPropsType> = (
 
 
     const inputErrorClass = classes.inputError;
-
+    const addUserrCallback = () => {addUser(name)}
 
     return (
         <div className={classes.wrapper}>
             <div className={classes.taskForm}>
-                <input value={name} onChange={setNameCallback} className={error ? inputErrorClass : ""}/>
+                {/*<input value={name} onChange={setNameCallback} className={error ? inputErrorClass : ""}/>*/}
 
-                <button className={classes.btn} onClick={() => {
-                    addUser(name)
-                }}>add
-                </button>
+                <SuperInputText
+                    value={name}
+                    error={error}
+                    onChange={setNameCallback}
+
+                />
+
+
+
+
+
+                <SuperButton
+                    onClick={addUserrCallback}
+                    red={name}
+                    error={error}
+                    >
+                    add
+                </SuperButton>
+
+
             </div>
             <span className={classes.totalUsers}>{totalUsers}</span>
-            {error && <span className={classes.error}> {error}</span>}
+
         </div>
     );
 }

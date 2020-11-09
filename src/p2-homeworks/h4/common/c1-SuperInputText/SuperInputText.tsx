@@ -7,7 +7,7 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 // здесь мы говорим что у нашего инпута будут такие же пропсы как у обычного инпута
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 type SuperInputTextPropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
-    onChangeText?: (value: string) => void
+    onChangeText?: (value: string ) => void
     onEnter?: () => void
     error?: string
     spanClassName?: string
@@ -38,8 +38,8 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         && onEnter(); // то вызвать его
     }
 
-    const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ""}`;
-    const finalInputClassName = `${s.errorInput} ${className}`; // need to fix with (?:) and s.superInput
+    const finalSpanClassName = `${s.spanClass} ${error ? s.spanError : ""}`;
+    const finalInputClassName = `${s.superInput} ${error && s.errorInput}` ; // need to fix with (?:) and s.superInput
 
     return (
         <>

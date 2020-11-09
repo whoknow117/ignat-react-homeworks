@@ -1,12 +1,34 @@
 .superInput {
-
+    width: 400px;
+    outline: none;
+    border: none;
+    background: rgba(0,0,0,.1);
+    height: 35px;
+    padding-left: 10px;
+    border-radius :4px;
 }
 
 .errorInput {
-    border: 3px solid lime;
-    background: red;
+    border: 1px solid rgba(0,0,0,.1);
+    background: rgba( 255, 78, 93,.4);
 }
 
 .error {
     color: red;
+}
+.spanClass {
+    position: absolute;
+    bottom: -70px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: calc(50% - 25px);
+    border: 1px solid red;
+    background: #fff;
+    border-radius: 50%;
+}
+.errorSpan {
+
 }
