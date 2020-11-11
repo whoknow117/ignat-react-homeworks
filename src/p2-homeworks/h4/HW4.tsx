@@ -4,16 +4,16 @@ import s from "./HW4.module.css";
 import SuperButton from "./common/c2-SuperButton/SuperButton";
 import SuperCheckbox from "./common/c3-SuperCheckbox/SuperCheckbox";
 
+ 
+
 function HW4() {
     const [text, setText] = useState<string>("");
-    const error = text ? "" : "введите текст";
+    const error = text ? "" : 'error';
     const showAlert = () => {
-
         if (error) {
             alert("введите текст...");
         } else {
-            alert(text);
-            setText("")// если нет ошибки показать текст
+            alert(text); // если нет ошибки показать текст
         }
     }
 
@@ -21,7 +21,7 @@ function HW4() {
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked);
 
     return (
-        <div className={s.wrap}>
+        <div>
             <hr/>
             homeworks 4
 
@@ -32,28 +32,27 @@ function HW4() {
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // className={s.blue} // проверьте, рабоет ли смешивание классов
+                    className={s.blue} // проверьте, рабоет ли смешивание классов
                 />
 
                 {/*should work (должно работать)*/}
                 <SuperButton
-                    red={text}// пропсу с булевым значением не обязательно указывать true
+                    red // пропсу с булевым значением не обязательно указывать true
                     onClick={showAlert}
                 >
-                    add {/*// название кнопки попадёт в children*/}
+                    delete {/*// название кнопки попадёт в children*/}
                 </SuperButton>
 
                 {/*should work (должно работать)*/}
                 <SuperCheckbox
                     checked={checked}
                     onChangeChecked={setChecked}
-                    onChange={testOnChange}
                 >
-                    childrenText {/*// этот текст попадёт в children*/}
+                    some text {/*// этот текст попадёт в children*/}
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
-                {/*<SuperCheckbox checked={checked} onChange={testOnChange}/>*/}
+                <SuperCheckbox checked={checked} onChange={testOnChange}/>
             </div>
 
             <hr/>

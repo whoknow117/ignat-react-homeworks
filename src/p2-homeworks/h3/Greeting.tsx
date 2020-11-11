@@ -8,7 +8,7 @@ type GreetingPropsType = {
     name: string
     setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void
     addUser: (name: string) => void
-    error: string
+    error?: string
     totalUsers: number
 }
 
@@ -39,8 +39,8 @@ const Greeting: React.FC<GreetingPropsType> = (
 
                 <SuperButton
                     onClick={addUserrCallback}
-                    red={name}
-                    error={error}
+
+
                     >
                     add
                 </SuperButton>
