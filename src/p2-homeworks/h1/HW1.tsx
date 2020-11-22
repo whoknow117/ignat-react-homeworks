@@ -59,9 +59,7 @@ function HW1() {
     return (
         <div>
             <hr/>
-            homeworks 1
 
-            should work (должно работать)
 
             <Message
                 avatar={messageData.avatar}
@@ -70,22 +68,7 @@ function HW1() {
                 time={messageData.time}
             />
 
-            <hr/>
-            для личного творчества, могу проверить
-            {alternativeMessage.map((m,idx) => {
-                return (
-                    <AlternativeMessage
-                        avatar={m.avatar}
-                        name={m.name}
-                        message={m.message}
-                        time={m.time}
-                        id={m.id}
-                        key={idx}
-                    />
-                )
-            })}
 
-            <hr/>
         </div>
     );
 }
