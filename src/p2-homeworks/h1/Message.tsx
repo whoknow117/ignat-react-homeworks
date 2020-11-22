@@ -10,7 +10,7 @@ type PropsType = {
 
 function Message(props: PropsType) {
     return (
-        <div>
+
             <div className={classes.message}>
 
                 <div className={classes.avatar}>
@@ -23,7 +23,7 @@ function Message(props: PropsType) {
                 </div>
 
             </div>
-        </div>
+
     );
 }
 

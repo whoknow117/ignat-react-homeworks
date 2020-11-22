@@ -1,0 +1,30 @@
+.headerWrapper {
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  background: #000;
+  .btn {
+    position: absolute;
+    left: 0;
+
+  }
+  .nav {
+    width: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: -104px;
+    top: 20px;
+    transition: .3s ease-in-out;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  .hidden {
+      top: -100px;
+  }
+
+}

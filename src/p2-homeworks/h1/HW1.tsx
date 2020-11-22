@@ -1,6 +1,7 @@
 import React from "react";
 import Message from "./Message";
 import AlternativeMessage from './AlternativeMessage';
+import classes from './HW1.module.scss';
 
 type PropsType = {
     avatar: string
@@ -19,9 +20,9 @@ export type AlternativeType = {
 }
 
 const messageData: PropsType = {
-    avatar: "https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg",
+    avatar: "https://bestprofilepictures.com/wp-content/uploads/2020/06/Anonymous-Profile-Picture-1024x1024.jpg",
     name: "Some Name",
-    message: "some text",
+    message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\"",
     time: "22:00",
 };
 
@@ -57,8 +58,8 @@ const alternativeMessage: Array<AlternativeType> =  [
 
 function HW1() {
     return (
-        <div>
-            <hr/>
+        <div className={classes.wrapper}>
+
 
 
             <Message
