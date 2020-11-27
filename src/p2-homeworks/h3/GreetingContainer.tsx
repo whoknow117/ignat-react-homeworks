@@ -30,7 +30,7 @@ const   GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUs
 
         }
         else if(name.trim() === "") {
-            setError("Error")
+            setError("Введите текст")
             console.log('wtf')
         }
 
