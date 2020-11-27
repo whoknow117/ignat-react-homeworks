@@ -6,7 +6,6 @@
   min-height: 60px;
   display: flex;
   position: relative;
-
   margin-bottom: 10px;
   .avatar {
     width: 48px;
@@ -35,6 +34,7 @@
     margin-left: 10px;
     border-radius: 20px 20px 20px 0px;
     position: relative;
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
     &:before {
       content: '';
       display: block;
@@ -52,6 +52,7 @@
   .time {
     display: block;
     position: absolute;
+    color: rgba(0,0,0,.4);
     right: 10px;
     top: 10px;
 

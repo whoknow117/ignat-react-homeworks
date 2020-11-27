@@ -1,6 +1,6 @@
 import React from "react";
 import {AffairType} from "./HW2";
-import classes from './Affairs.module.css';
+import classes from './Affair.module.css';
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type AffairPropsType = {
@@ -15,15 +15,15 @@ function Affair(props: AffairPropsType) {
         props.deleteAffairCallback(props.affair._id)
     };
 
-    const indicatorStyle = {
-        backgroundColor: props.affair.priority ? props.affair.color : 'white'
-    };
+    const titleStyle = {
+        color: `${props.affair.color ? props.affair.color : ""}`
+    }
 
 
     return (
         <div className={classes.wrapper}>
 
-            <div style={indicatorStyle} className={classes.affair}>{props.affair.name}{}
+            <div style={titleStyle} className={classes.affair}>{props.affair.name}
                 <SuperButton
                     red
                     onClick={deleteCallback}

@@ -14,11 +14,11 @@ export type FilterType = "all" | AffairPriorityType;
 
 
 const defaultAffairs: Array<AffairType> = [
-    {_id: 1, name: "React", priority: "high", color: '#fc7979'},
-    {_id: 2, name: "anime", priority: "low", color: '#ffe9ad'},
-    {_id: 3, name: "games", priority: "low", color: '#ffe9ad'},
-    {_id: 4, name: "work", priority: "high", color: '#fc7979'},
-    {_id: 5, name: "html & css", priority: "middle", color: '#ffb68c'},
+    {_id: 1, name: "React", priority: "high", color: '#ff0000'},
+    {_id: 2, name: "anime", priority: "low", color: '#3800ff'},
+    {_id: 3, name: "games", priority: "low", color: '#3800ff'},
+    {_id: 4, name: "work", priority: "high", color: '#ff0000'},
+    {_id: 5, name: "html & css", priority: "middle", color: '#ff8c00'},
 ];
 
 
@@ -38,7 +38,7 @@ function HW2() {
     const [filter, setFilter] = useState<FilterType>("all");
 
     const filteredAffairs = filterAffairs(affairs, filter);
-    const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)); // need to fix any
+    const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id));
 
     return (
         <div className={classes.affairsWrapper}>
@@ -49,7 +49,6 @@ function HW2() {
             <Affairs
                 data={filteredAffairs}
                 setFilter={setFilter}
-
                 deleteAffairCallback={deleteAffairCallback}
             />
 

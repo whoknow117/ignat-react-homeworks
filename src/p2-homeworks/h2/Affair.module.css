@@ -1,0 +1,30 @@
+.wrapper {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.wrapper .affair button {
+
+
+
+    right: 0;
+    top: calc( 50% - 10px);
+
+    position: absolute;
+
+
+
+
+
+    right: 0;
+}
+
+.wrapper .affair {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid silver;
+}

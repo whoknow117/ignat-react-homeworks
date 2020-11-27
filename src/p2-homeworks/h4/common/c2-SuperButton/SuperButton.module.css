@@ -1,7 +1,19 @@
 .default {
-    background: #fff;
+    padding: 4px 20px;
+    border: none;
+    background: #5256b3;
+    color: #fff;
+    outline: none;
+    border: 1px solid rgba(255,255,255,.6);
+    cursor: pointer;
 }
 
 .red {
     background: red;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+
+
 }
