@@ -1,9 +1,12 @@
 .blue {
     border-bottom: 5px solid blue;
 }
+.wrap {
+    margin: 0 auto;
+    margin-bottom: 40px;
 
+}
 .column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+
 }
